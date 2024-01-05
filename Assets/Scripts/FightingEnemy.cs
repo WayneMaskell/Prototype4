@@ -8,7 +8,8 @@ public class FightingEnemy : MonoBehaviour
     private Rigidbody enemyRb;
     private bool isAttacking = false;
     [SerializeField] private float distanceToPlayer;
-    public float enemySpeed = 10f;
+    public float enemySpeed = 1f;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,11 @@ public class FightingEnemy : MonoBehaviour
             Attack();
         
         }
+
+        if (transform.position.y < -10) { Destroy(gameObject); }
+       
+
+        
         
     }
     public void Attack() 
